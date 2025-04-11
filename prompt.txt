@@ -1,0 +1,3 @@
+prompt:
+
+can you build me a django-based web app that works like a google drive, with built-in authentication system and with the login credentials automatically created for users (on a list that will be uploaded by the admin) following a lastname.firstname.middleinital format?
