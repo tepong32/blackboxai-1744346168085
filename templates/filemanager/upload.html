@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block title %}Upload Files - Django File Manager{% endblock %}
+
+{% block content %}
+<div class="bg-white shadow sm:rounded-lg">
+    <div class="px-4 py-5 sm:p-6">
+        <h3 class="text-lg leading-6 font-medium text-gray-900">
+            Upload Files
+        </h3>
+        <div class="mt-2 max-w-xl text-sm text-gray-500">
+            <p>Select files to upload or drag and drop them here.</p>
+        </div>
+        <form method="post" enctype="multipart/form-data" class="mt-5">
+            {% csrf_token %}
+            
+            <!-- Folder Selection -->
+            <div class="mb-5">
+                <label for="folder" class="block text-sm font-medium text-gray-700">Select Folder (Optional)</label>
+                <select id="folder" name="folder"
+                    class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md">
+                    <option value="">Root Directory</option>
+                    {% for folder in folders %}
+                    <option value="{{ folder.id }}">{{ folder.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <!-- File Upload Area -->
+            <div class="max-w-lg">
+                <input type="file" name="files" id="file-upload" class="block w-full text-sm text-gray-500
+                    file:mr-4 file:py-2 file:px-4
+                    file:rounded-full file:border-0
+                    file:text-sm file:font-semibold
+                    file:bg-indigo-50 file:text-indigo-700
+                    hover:file:bg-indigo-100" multiple>
+                <p class="mt-1 text-sm text-gray-500">
+                    Up to 500MB per file
+                </p>
+            </div>
+
+            <!-- Upload Button -->
+            <div class="mt-5">
+                <button type="submit"
+                    class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                    <i class="fas fa-upload mr-2"></i>
+                    Upload Files
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
