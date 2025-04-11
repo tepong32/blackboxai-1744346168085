@@ -1,0 +1,10 @@
+This is a test file for the Django File Manager.
+It demonstrates the file upload functionality.
+
+Features to test:
+1. File upload
+2. File download
+3. File sharing
+4. Storage quota tracking
+
+Created on: April 11, 2025
