@@ -73,7 +73,9 @@ def upload_file(request):
             except Exception as e:
                 messages.error(request, f'Error uploading {uploaded_file.name}: {str(e)}')
         
-        return redirect('dashboard' if not folder else 'folder_view', folder_id=folder.id)
+        if folder:
+            return redirect('folder_view', folder_id=folder.id)
+        return redirect('dashboard')
     
     folders = Folder.objects.filter(owner=request.user)
     return render(request, 'filemanager/upload.html', {'folders': folders})
