@@ -9,6 +9,8 @@ from django.conf import settings
 import os
 import mimetypes
 
+from accounts.models import CustomUser
+
 @login_required
 def dashboard(request):
     """Display user's files and folders"""
