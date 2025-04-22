@@ -2,8 +2,6 @@
 Built by https://www.blackbox.ai
 
 ---
-
-```markdown
 # Django File Manager
 
 ## Project Overview
@@ -97,8 +95,8 @@ Contributions are welcome! Please submit a pull request for any features, bug fi
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-```
 
+---
 Make sure to replace `<repository-url>` with the actual URL of the project's repository before sharing.
 
 _________________________
