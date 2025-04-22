@@ -9,8 +9,6 @@ from django.conf import settings
 import os
 import mimetypes
 
-from accounts.models import CustomUser
-
 @login_required
 def dashboard(request):
     """Display user's files and folders"""
@@ -19,9 +17,10 @@ def dashboard(request):
         Q(file__sharedfile__shared_with=request.user)
     ).distinct()
     
+    # Only show files that are not in any folder
     files = File.objects.filter(
-        Q(owner=request.user) | 
-        Q(sharedfile__shared_with=request.user)
+        (Q(owner=request.user) | Q(sharedfile__shared_with=request.user)) &
+        Q(folder__isnull=True)
     ).distinct()
     
     context = {
