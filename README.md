@@ -100,3 +100,71 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ```
 
 Make sure to replace `<repository-url>` with the actual URL of the project's repository before sharing.
+
+_________________________
+Django File Manager application:
+
+    User Management:
+
+    Custom user system with storage quotas (5GB by default per user)
+    Username generation in format: lastname.firstname.middleinitial
+    Storage usage tracking per user
+    User profiles with first name, last name, and middle initial
+
+    File Management:
+
+    Upload files with validation:
+        Size limit of 500MB per file
+        Supports specific file types:
+            PDF documents
+            Word documents (DOC, DOCX)
+            Excel spreadsheets (XLS, XLSX)
+            Images (JPEG, PNG, GIF)
+            Text files
+            Archives (ZIP, RAR)
+    Download files
+    Delete files
+    Track file metadata (size, mime type, upload date)
+
+    Folder System:
+
+    Create folders and subfolders
+    Hierarchical folder structure
+    Delete folders
+    Navigate through folder structure
+    Unique folder names per user/parent combination
+
+    File Sharing:
+
+    Share files with other users
+    Configurable sharing permissions (can_edit option)
+    Track shared file status and sharing date
+    View files shared by others
+    Shared files appear in user's dashboard
+
+    Dashboard Features:
+
+    View all owned files and folders
+    View files shared by others
+    Organize files in folders
+    File/folder management interface
+
+    Security Features:
+
+    Login required for all operations
+    Permission checks for file access
+    Storage quota enforcement
+    File type validation
+    Owner-only deletion rights
+    Secure file sharing system
+
+    Additional Features:
+
+    Automatic file organization (files stored by date: year/month/day)
+    File size tracking
+    Last modified tracking
+    MIME type detection and validation
+    Storage quota management
+    User storage usage tracking
+
+This is a comprehensive file management system with user management, file organization, sharing capabilities, and security features built in.
